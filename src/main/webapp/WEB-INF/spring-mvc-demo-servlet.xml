@@ -29,7 +29,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<util:properties id="countryOptions" location="classpath:webapp/WEB-INF/countries.properties" />
+	<util:properties id="countryOptions" location="classpath:WEB-INF/countries.properties" />
 
 </beans>
 
