@@ -1,5 +1,7 @@
 package com.demospring;
 
+import com.demospring.validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -18,8 +20,11 @@ public class Customer {
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
 
-    public String getPostalCode() {
-        return postalCode;
+    @CourseCode(value = "TOPS", message = "must start with TOPS")
+    private String courseCode;
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 
     public void setPostalCode(String postalCode) {
@@ -48,5 +53,13 @@ public class Customer {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
     }
 }
